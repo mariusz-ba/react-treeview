@@ -10,7 +10,6 @@ export class App extends Component {
   render() {
     return (
       <div>
-        <h1>Hello World</h1>
         <TreeView>
           <TreeView.List>
             <TreeView.Item onClick={this.onClicked}>Item</TreeView.Item>
