@@ -11,8 +11,6 @@ export default class Item extends Component {
   }
 
   onClick = e => {
-    console.log('clicked div');
-
     if(this.isExpandable())
       this.setState({ expanded: !this.state.expanded });
 
