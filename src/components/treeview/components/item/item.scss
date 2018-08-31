@@ -1,0 +1,43 @@
+.item {
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: .5rem;
+    padding: .5rem;
+    align-items: center;
+
+    &:hover {
+      cursor: pointer;
+      background: #f0f0f0;
+    }
+  }
+
+  &--expandable {
+    & > ul {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height linear var(--duration);
+    }
+  }
+  
+  &--expandable > &__content {
+    grid-template-columns: max-content 1fr;
+    
+    svg {
+      display: block;
+      transition: transform linear .2s;
+    }
+  }
+
+  &--expanded {
+    & > ul {
+      max-height: var(--max-height);
+    }
+  }
+  
+  &--expanded > &__content {
+    svg {
+      transform: rotateZ(90deg);
+    }
+  }
+}
